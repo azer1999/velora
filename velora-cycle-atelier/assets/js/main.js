@@ -13,7 +13,7 @@
 09. auto update year
 10. Sidebar Js
 11. Close Handlers (cartmini / body-overlay)
-12. Search Js
+12. Landing anchor scroll
 13. portfolio-item-hover (service-item hover)
 14. card-award hover (expanded image follows cursor)
 15. panel pin section (at-panel-pin)
@@ -156,6 +156,44 @@
             sec1Home11ReelVideoEl.currentTime = 0;
         });
     }
+
+    ////////////////////////////////////////////////////
+    // 47b-6. Velora contact form - frontend validation
+    $('.velora-contact__form').each(function () {
+        const form = this;
+        const $form = $(form);
+        const $status = $form.find('.velora-contact__status');
+        const successText = 'Thank you! Your message has been sent.';
+
+        const setFieldState = (field) => {
+            const $field = $(field).closest('.velora-contact__field');
+            if (!$field.length) return;
+            $field.toggleClass('is-error', !field.checkValidity());
+        };
+
+        $form.on('input blur', '.velora-contact__input', function () {
+            setFieldState(this);
+            $status.removeClass('is-visible').text('');
+        });
+
+        $form.on('submit', function (event) {
+            event.preventDefault();
+
+            const fields = Array.from(form.querySelectorAll('.velora-contact__input[required]'));
+            fields.forEach(setFieldState);
+
+            if (!form.checkValidity()) {
+                const firstInvalid = form.querySelector('.velora-contact__input:invalid');
+                if (firstInvalid) firstInvalid.focus();
+                $status.removeClass('is-visible').text('');
+                return;
+            }
+
+            form.reset();
+            $form.find('.velora-contact__field').removeClass('is-error');
+            $status.text(successText).addClass('is-visible');
+        });
+    });
 
     ////////////////////////////////////////////////////
     // 06. back to top
@@ -341,16 +379,6 @@
     $('.cartmini-close-btn, .body-overlay').on('click', function () {
         $('.cartmini__area').removeClass('opened cartmini-opened');
         $('.body-overlay').removeClass('apply');
-    });
-
-    ////////////////////////////////////////////////////
-    // 12. Search Js
-    $('.at-search-click').on('click', function () {
-        $('.at-search-form-toggle,.at-search-body-overlay').addClass('active');
-    });
-
-    $('.at-search-close,.at-search-body-overlay').on('click', function () {
-        $('.at-search-form-toggle,.at-search-body-overlay').removeClass('active');
     });
 
     ////////////////////////////////////////////////////
