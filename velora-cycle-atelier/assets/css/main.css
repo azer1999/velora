@@ -31853,8 +31853,8 @@ input.footer-15__form-input:focus {
 }
 /* Home 13 / Section 7 — Testimonial */
 .sec-7-home-13 {
-  background-color: var(--at-neutral-0);
-  padding: 120px 96px;
+  background-color: var(--at-neutral-50);
+  padding: 120px 96px 180px;
 }
 
 .sec-7-home-13__inner {
@@ -32091,7 +32091,7 @@ input.footer-15__form-input:focus {
 /* ── Responsive ──────────────────────────────── */
 @media only screen and (min-width: 1400px) and (max-width: 1599px) {
   .sec-7-home-13 {
-    padding: 96px 32px;
+    padding: 96px 32px 152px;
   }
   .sec-7-home-13__inner {
     grid-template-columns: 480px 1fr;
@@ -32105,7 +32105,7 @@ input.footer-15__form-input:focus {
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .sec-7-home-13 {
-    padding: 80px 24px;
+    padding: 80px 24px 136px;
   }
   .sec-7-home-13__inner {
     grid-template-columns: 400px 1fr;
@@ -32132,7 +32132,7 @@ input.footer-15__form-input:focus {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .sec-7-home-13 {
-    padding: 64px 20px;
+    padding: 64px 20px 112px;
   }
   .sec-7-home-13__inner {
     gap: 32px;
@@ -32148,7 +32148,7 @@ input.footer-15__form-input:focus {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .sec-7-home-13 {
-    padding: 48px 30px;
+    padding: 48px 30px 88px;
   }
   .sec-7-home-13__media {
     height: 420px;
@@ -32163,7 +32163,7 @@ input.footer-15__form-input:focus {
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .sec-7-home-13 {
-    padding: 36px 30px;
+    padding: 36px 30px 72px;
   }
   .sec-7-home-13__media {
     height: 360px;
@@ -32176,7 +32176,7 @@ input.footer-15__form-input:focus {
 }
 @media (max-width: 574.98px) {
   .sec-7-home-13 {
-    padding: 36px 30px;
+    padding: 36px 30px 72px;
   }
   .sec-7-home-13__media {
     height: 320px;
